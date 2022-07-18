@@ -25,7 +25,7 @@
         <div class="rating">
             <h3>Rating task</h3>
 
-            <form action="{% url 'rating' %}" method="post">
+            <form action="{% url 'rating' task.id %}" method="post">
                 {% csrf_token %}
                 {{ rating_form }}
                 <button type="submit">Submit</button>

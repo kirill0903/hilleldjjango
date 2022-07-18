@@ -26,8 +26,8 @@ class Task(models.Model):
 
 
 class Rating(models.Model):
-	# @TODO Связать рейтинг с задачами
-	# @TODO Связать рейтинг с пользователями
+	user = models.ForeignKey(User, on_delete=models.CASCADE)
+	task = models.OneToOneField(Task, on_delete=models.CASCADE)
 	id = models.AutoField(primary_key=True)
 	point = models.CharField(max_length=20, choices=(
 		('1', '1'),
